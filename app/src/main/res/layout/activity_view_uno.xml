@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewUno">
+
+    <Button
+        android:id="@+id/btnvistaprincipal"
+        android:layout_width="match_parent"
+        android:layout_height="1000px"
+        android:layout_margin="5dp"
+        android:background="@color/color2"
+        android:text="@string/txtvistaprincipal"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="368dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        app:layout_constraintVertical_weight="1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnnuevapelicula"
+        android:layout_width="match_parent"
+        android:layout_height="1000px"
+        android:layout_margin="5dp"
+        android:background="@color/color1"
+        android:text="@string/txtnuevapelicula"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="368dp" />
+
+</LinearLayout>

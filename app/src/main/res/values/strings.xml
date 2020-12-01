@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Peliculas YahaveMondragon 16650248</string>
+
+    <string name="txtusuario">Usuario</string>
+    <string name="txtpassword">Password</string>
+    <string name="txtlogin">Login</string>
+    <string name="txtvistaprincipal">Vista Principal</string>
+
+    <string name="txttitulo">Titulo</string>
+    <string name="txtpais">Pais de produccion o grabacion</string>
+    <string name="txtcalificacion">Calificacion</string>
+    <string name="txtimagenurl">Imagen url</string>
+    <string name="txturl">Pagina web</string>
+    <string name="txtaceptar">Aceptar</string>
+    <string name="txtnuevapelicula">Nueva Pelicula</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
