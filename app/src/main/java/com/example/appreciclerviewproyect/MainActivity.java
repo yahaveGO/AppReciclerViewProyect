@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
     public Button btnlogin;
     public EditText txtusuario;
     public EditText txtpassword;
-    public String user     = "yahave";
-    public String password = "123";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usuario = txtusuario.getText().toString().trim();
+                String usuario   = txtusuario.getText().toString().trim();
                 String password  = txtpassword.getText().toString().trim();
                 String user = "yahave";
                 String pass = "123";
 
                 if (!(usuario.equalsIgnoreCase(user) && (password.equalsIgnoreCase(pass)))){
-                    Toast.makeText(MainActivity.this,"Bienvenido al sistema "+user,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Bienvenido al sistema "+user+" \nsaludos",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), ViewUno.class);
                     intent.putExtra("opcion", "value activity");
                     startActivity(intent);

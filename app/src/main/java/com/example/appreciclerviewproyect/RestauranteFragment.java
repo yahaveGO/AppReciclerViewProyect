@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -48,7 +49,8 @@ public class RestauranteFragment extends Fragment {
     }
 
 
-    public List<Restaurante> metodo_arreglo_list(String arreglo[]){
+    //public List<Restaurante> metodo_arreglo_list(String titulo, String pais, String calificacion, String imagenurl, String url){
+    public List<Restaurante> metodo_arreglo_list(){
         restauranteList=new ArrayList<>();  //TODO:Remover para no borrar los guardados
 
         restauranteList.add(new Restaurante("IRON MAN",
@@ -69,13 +71,21 @@ public class RestauranteFragment extends Fragment {
                 5.0f,
                 "https://www.descargatelocorp.com/iron-man-hd-1080p-espanol-latino/"));
 
-        restauranteList.add(new Restaurante(
+        /*System.out.println("ARREGLO RF: ->"+arreglo);*/
+        /*restauranteList.add(new Restaurante(
                 arreglo[0],//nombre
                 arreglo[1],//imagenurl
                 arreglo[2],//pais
                 Float.parseFloat(arreglo[3]),//valoracion
-                arreglo[4]));//url
-
+                arreglo[4]));//url*/
+        //System.out.println("1 "+titulo+" 2"+imagenurl);//FIXME:RUN
+        /*restauranteList.add(new Restaurante(
+                titulo,//nombre
+                imagenurl,//imagenurl
+                pais,//pais
+                Float.parseFloat(calificacion),//valoracion
+                url//url
+        ));*/
         return restauranteList;
     }
 
@@ -93,7 +103,7 @@ public class RestauranteFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount)); // New
             }
 
-            String arreglo[] = new String[5];
+            /*String arreglo[] = new String[5];
 
             arreglo[0] = "titulo";
             arreglo[1] = "imagenurl";
@@ -101,8 +111,16 @@ public class RestauranteFragment extends Fragment {
             arreglo[3] = "3.0f";
             arreglo[4] = "url";
 
-            restauranteList = metodo_arreglo_list(arreglo);
+            restauranteList = metodo_arreglo_list(arreglo);*/
 
+            /*String titulo2       = "titulo";
+            String pais2         = "pais";
+            String calificacion2 = "3.0f";
+            String imagenurl2    = "imagenurl";
+            String url2          = "url";
+            restauranteList = metodo_arreglo_list(titulo2,pais2,calificacion2,imagenurl2,url2);*/
+
+            restauranteList = metodo_arreglo_list();
             recyclerView.setAdapter(new MyRestauranteRecyclerViewAdapter(getActivity(), restauranteList, myListener));
         }
 

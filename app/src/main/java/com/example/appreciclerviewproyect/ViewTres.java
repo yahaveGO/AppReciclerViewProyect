@@ -29,7 +29,7 @@ public class ViewTres extends AppCompatActivity {
     public EditText idurl;
     public Button btnnuevapelicula;
     RequestQueue requestQueue;
-    private static final String URL_CREATE = "http://192.168.8.6/GitHub-ITZ-ISC-School/Android/create.php";
+    private static final String URL_CREATE = "http://192.168.8.7/GitHub-ITZ-ISC-School/Android/create.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

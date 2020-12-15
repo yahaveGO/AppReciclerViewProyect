@@ -23,6 +23,7 @@ public class ViewDos extends AppCompatActivity implements RestauranteFragment.On
     private FragmentManager fragmentManager;
     private static RestauranteFragment.OnListFragmentInteractionListener myListener;
     RequestQueue requestQueue;
+    private static final String URL_SELECT = "http://192.168.8.7/GitHub-ITZ-ISC-School/Android/select.php";
 
     public EditText idtitulo;
     public EditText idpais;
@@ -69,15 +70,15 @@ public class ViewDos extends AppCompatActivity implements RestauranteFragment.On
         arreglo[2] = pais;
         arreglo[3] = calificacion;
         arreglo[4] = url;
+        System.out.println("ARREGLO VIEWDOS 1: ->"+arreglo);
 
-        RestauranteFragment restauranteFragment = new RestauranteFragment(myListener);
-        restauranteFragment.metodo_arreglo_list(arreglo);
+        /*RestauranteFragment restauranteFragment = new RestauranteFragment(myListener);
+        restauranteFragment.metodo_arreglo_list(titulo,pais,calificacion,imagenurl,url);*/
         return arreglo;
     }
 
-
     public void readUser(){
-        String URL_SELECT = "http://192.168.8.6/GitHub-ITZ-ISC-School/Android/select.php";
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 URL_SELECT,
@@ -99,7 +100,21 @@ public class ViewDos extends AppCompatActivity implements RestauranteFragment.On
                             idimagenurl.setText(imagenurl);
                             idurl.setText(url);
 
-                            metodo_arreglo(titulo,pais,calificacion,imagenurl,url);
+                            String titulo2       = response.getString("titulo");
+                            String pais2         = response.getString("pais");
+                            String calificacion2 = response.getString("calificacion");
+                            String imagenurl2    = response.getString("imagenurl");
+                            String url2          = response.getString("url");
+
+                            /*String arreglo[] = new String[5];
+                            arreglo[0] = titulo2;
+                            arreglo[1] = pais2;
+                            arreglo[2] = calificacion2;
+                            arreglo[3] = imagenurl2;
+                            arreglo[4] = url2;
+                            System.out.println("ARREGLO VIEWDOS 2: ->"+arreglo[0]);*/
+                            //metodo_arreglo(titulo,pais,calificacion,imagenurl,url);
+                            metodo_arreglo(titulo2,pais2,calificacion2,imagenurl2,url2);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
