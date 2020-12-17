@@ -5,18 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ViewTres">
+    tools:context=".ViewCuatro">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color1"
+        android:background="@color/color2"
         android:gravity="center"
-        android:text="@string/txtnuevapelicula"
+        android:text="@string/visualizar_editar_eliminar"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/idmovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:drawableStart="@drawable/ic_baseline_movie_24"
+        android:drawableLeft="@drawable/ic_baseline_movie_24"
+        android:drawablePadding="20dp"
+        android:hint="ID"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="213dp" />
 
     <EditText
         android:id="@+id/idtitulo"
@@ -90,13 +104,13 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnnuevapelicula"
+        android:id="@+id/btneditpelicula"
         android:layout_width="600px"
         android:layout_height="100px"
         android:layout_gravity="right"
         android:layout_margin="15dp"
-        android:background="@color/colorAccent"
-        android:text="@string/txtaceptar"
+        android:background="@color/color1"
+        android:text="@string/editar_pelicula"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -106,20 +120,20 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="300px" />
+        android:layout_height="200px" />
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
         <Button
-            android:id="@+id/btnshowpelicula"
+            android:id="@+id/btndeletepelicula"
             android:layout_width="500px"
             android:layout_height="100px"
             android:layout_gravity="right"
             android:layout_margin="15dp"
-            android:background="@color/color2"
-            android:text="Visualizar por id"
+            android:background="@color/red"
+            android:text="Eliminar por id"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -128,13 +142,14 @@
             tools:layout_editor_absoluteY="368dp" />
 
         <EditText
-            android:id="@+id/idshowpelicula"
+            android:id="@+id/iddeletepelicula"
             android:layout_width="300px"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
 
     </TableRow>
+
 
 </LinearLayout>
 

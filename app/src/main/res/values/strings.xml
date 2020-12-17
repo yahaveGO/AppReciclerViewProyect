@@ -11,8 +11,10 @@
     <string name="txtcalificacion">Calificacion</string>
     <string name="txtimagenurl">Imagen url</string>
     <string name="txturl">Pagina web</string>
-    <string name="txtaceptar">Aceptar</string>
+    <string name="txtaceptar">Crear nueva pelicula</string>
     <string name="txtnuevapelicula">Nueva Pelicula</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="visualizar_editar_eliminar">visualizar - editar - eliminar</string>
+    <string name="editar_pelicula">Editar pelicula</string>
 </resources>

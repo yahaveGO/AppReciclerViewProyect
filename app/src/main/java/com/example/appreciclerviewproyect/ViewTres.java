@@ -15,8 +15,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +32,10 @@ public class ViewTres extends AppCompatActivity {
     public EditText idimagenurl;
     public EditText idurl;
     public Button btnnuevapelicula;
+
+    public EditText idshowpelicula;
+    public Button btnshowpelicula;
+
     RequestQueue requestQueue;
     private static final String URL_CREATE = "http://192.168.8.7/GitHub-ITZ-ISC-School/Android/create.php";
 
@@ -35,6 +43,7 @@ public class ViewTres extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_tres);
+
 
         requestQueue = Volley.newRequestQueue(this);
 
@@ -44,6 +53,10 @@ public class ViewTres extends AppCompatActivity {
         idimagenurl      = findViewById(R.id.idimagenurl);
         idurl            = findViewById(R.id.idurl);
         btnnuevapelicula = findViewById(R.id.btnnuevapelicula);
+
+        idshowpelicula = findViewById(R.id.idshowpelicula);
+        btnshowpelicula = findViewById(R.id.btnshowpelicula);
+
 
 //--------------------------------------------------------------------------------------------------
         btnnuevapelicula.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +73,16 @@ public class ViewTres extends AppCompatActivity {
                 String url          = idurl.getText().toString().trim();
 
                 metodo_create(titulo,pais,calificacion,imagenurl,url);
+            }
+        });
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+        btnshowpelicula.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ViewCuatro.class);
+                intent.putExtra("id", idshowpelicula.getText().toString().trim());
+                startActivity(intent);
             }
         });
 //--------------------------------------------------------------------------------------------------
@@ -98,4 +121,8 @@ public class ViewTres extends AppCompatActivity {
 
         requestQueue.add(stringRequest);
     }
-}
+
+
+
+
+}//end

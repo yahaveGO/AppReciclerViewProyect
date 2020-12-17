@@ -15,6 +15,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +29,10 @@ public class RestauranteFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private RecyclerView recyclerView;
-    private List<Restaurante> restauranteList=new ArrayList<>();
+    private List<Restaurante> restauranteList = new ArrayList<>();
     private static OnListFragmentInteractionListener myListener;
+    public JSONArray array;
+
 
     public RestauranteFragment(OnListFragmentInteractionListener listener) {
         this.myListener = listener;
@@ -50,8 +57,8 @@ public class RestauranteFragment extends Fragment {
 
 
     //public List<Restaurante> metodo_arreglo_list(String titulo, String pais, String calificacion, String imagenurl, String url){
-    public List<Restaurante> metodo_arreglo_list(){
-        restauranteList=new ArrayList<>();  //TODO:Remover para no borrar los guardados
+    public List<Restaurante> metodo_arreglo_list() {
+        restauranteList = new ArrayList<>();  //TODO:Remover para no borrar los guardados
 
         restauranteList.add(new Restaurante("IRON MAN",
                 "https://www.lacasadeel.net/wp-content/uploads/2017/12/Iron-Man-1.jpg",
@@ -71,21 +78,24 @@ public class RestauranteFragment extends Fragment {
                 5.0f,
                 "https://www.descargatelocorp.com/iron-man-hd-1080p-espanol-latino/"));
 
-        /*System.out.println("ARREGLO RF: ->"+arreglo);*/
-        /*restauranteList.add(new Restaurante(
-                arreglo[0],//nombre
-                arreglo[1],//imagenurl
-                arreglo[2],//pais
-                Float.parseFloat(arreglo[3]),//valoracion
-                arreglo[4]));//url*/
-        //System.out.println("1 "+titulo+" 2"+imagenurl);//FIXME:RUN
-        /*restauranteList.add(new Restaurante(
-                titulo,//nombre
-                imagenurl,//imagenurl
-                pais,//pais
-                Float.parseFloat(calificacion),//valoracion
-                url//url
-        ));*/
+
+        ViewDos viewDos = new ViewDos();
+        //JSONArray array = viewDos.metodo_array();
+        String array2 = viewDos.metodo_array();
+        System.out.println("RESTAURANTE LIST LIST: "+array2);
+
+        /*
+        for (int i = 0; i < array.length(); i++) {
+            JSONObject movie = array.getJSONObject(i);
+
+            restauranteList.add(new Restaurante(movie.getString("titulo"),
+                    movie.getString("imagenurl"),
+                    movie.getString("pais"),
+                    movie.getLong("calificacion"),
+                    movie.getString("url")));
+        }
+        */
+
         return restauranteList;
     }
 
@@ -128,12 +138,12 @@ public class RestauranteFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(@NonNull Context context){
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener){
-            myListener= (OnListFragmentInteractionListener) context;
-        }else{
-            throw  new RuntimeException(context.toString());
+        if (context instanceof OnListFragmentInteractionListener) {
+            myListener = (OnListFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString());
         }
     }
 
